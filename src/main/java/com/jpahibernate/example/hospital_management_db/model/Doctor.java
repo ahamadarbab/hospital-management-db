@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity  // it represents that this class is entity or model class which is directly creating the database table
-@Table(name = "doctor")  // it will create a table inside database
+@Table(name = "doctors")  // it will create a table inside database
 @Data    // it will add getters and setters
 @AllArgsConstructor  // parameterized constructor
 @NoArgsConstructor  // default constructor
@@ -17,7 +17,7 @@ public class Doctor {
 
     @Id  // it is the primary key of the table - it will be unique and it is not null
     @Column(name = "doctor_id")  // it will create a column inside database table
-    private int id;
+    private int doctorId;
 
     @Column(name = "doctor_name", nullable = false)  // nullable = false - it cannot contain null value
     private String name;
@@ -31,6 +31,15 @@ public class Doctor {
     @Column(name = "dob", nullable = false)
     private String dob;
 
-    @Column(name = "mobile", nullable = false, unique = true)
-    private int mobile;
+    @Column(name = "phone", nullable = false, unique = true)
+    private int phone;
+
+    @Column(name = "experience", nullable = false)
+    private int experience;
+
+    @Column(name = "gender", nullable = false)
+    private String gender;
+
+    @Column(name = "available", nullable = false)
+    private Boolean available;
 }
