@@ -7,6 +7,9 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDate;
 
 @Entity  // it represents that this class is entity or model class which is directly creating the database table
 @Table(name = "doctors")  // it will create a table inside database
@@ -29,10 +32,10 @@ public class Doctor {
     private String specialization;
 
     @Column(name = "dob", nullable = false)
-    private String dob;
+    private LocalDate dob;
 
     @Column(name = "phone", nullable = false, unique = true)
-    private int phone;
+    private String phone;
 
     @Column(name = "experience", nullable = false)
     private int experience;
@@ -42,4 +45,5 @@ public class Doctor {
 
     @Column(name = "available", nullable = false)
     private Boolean available;
+
 }
