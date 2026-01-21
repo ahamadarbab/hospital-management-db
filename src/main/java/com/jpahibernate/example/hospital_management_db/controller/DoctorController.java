@@ -33,7 +33,7 @@ public class DoctorController {
         return doctorList;
     }
 
-    // @PathVariable - it is used to take the inputs in input request url path
+    // @PathVariable - it is used to take the inputs in request url path
     @GetMapping("/findById/{id}")
     public Doctor findDoctorById(@PathVariable int id) {
         Doctor doctor = doctorService.findDoctorById(id);
@@ -49,6 +49,19 @@ public class DoctorController {
     @DeleteMapping("/deleteById/{id}")
     public String deleteDoctorById(@PathVariable int id) {
         String response = doctorService.deleteDoctorById(id);
+        return response;
+    }
+
+    @PutMapping("/updateByPut/{id}")
+    public String updateDoctorUsingPut(@PathVariable int id, @RequestBody Doctor newDoctorRequest) {
+        String response = doctorService.updateDoctorUsingPut(id, newDoctorRequest);
+        return response;
+    }
+
+    // @RequestParam - it takes the input in the form of parameter query
+    @PatchMapping("/updateByPatch/{id}")
+    public String updateDoctorUsingPatch(@PathVariable int id, @RequestParam String newName, @RequestParam String newEmail, @RequestParam String newPhone) {
+        String response = doctorService.updateDoctorUsingPatch(id, newName, newEmail, newPhone);
         return response;
     }
 }
