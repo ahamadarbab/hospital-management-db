@@ -30,5 +30,4 @@ public class Ward {
 
     @Column(name = "available_beds", nullable = false)
     private int availableBeds;
-
 }

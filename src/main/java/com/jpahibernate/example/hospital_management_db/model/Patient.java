@@ -42,4 +42,5 @@ public class Patient {
 
     @Column(name = "admitted", nullable = false)
     private boolean admitted;
+
 }

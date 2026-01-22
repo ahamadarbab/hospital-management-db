@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository    // it performs the database operations and it is the data layer
 public interface WardRepository extends JpaRepository<Ward, Integer> {
+
 }
