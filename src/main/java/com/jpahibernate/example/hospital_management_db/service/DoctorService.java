@@ -56,7 +56,7 @@ public class DoctorService {
         {
             // proceed with update
             doctorRepository.save(newDoctorRequest);
-            return "Doctor updated successfully!";
+            return "Doctor with id: " + id + " got updated successfully!";
         }
         else
         {
@@ -78,7 +78,7 @@ public class DoctorService {
             existingDoctor.setEmail(newEmail);
             existingDoctor.setPhone(newPhone);
             doctorRepository.save(existingDoctor);
-            return "Doctor updated successfully!";
+            return "Doctor with id: " + id + " got updated successfully!";
         }
         else
         {
